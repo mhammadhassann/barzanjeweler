@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>زێرنگری بارزان</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('mm.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 20vh;
+    }
+
+    .bio-container {
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      max-width: 400px;
+      width: 1000%;
+      margin: auto;
+      padding: 50px 50px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0px 00px rgba(0, 0, 0, 0.4);
+      border: 0px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    .bio-container::before {
+      content: "";
+      position: below;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      filter: url(#ripple);
+      z-index: 0;
+      animation: rippleMove 6s infinite linear;
+    }
+
+    @keyframes rippleMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(10px, 10px); }
+    }
+
+    .bio-container > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      margin: 70px 0 270px;
+      font-size: 26px;
+      color: rgb(118, 151, 1);
+    }
+
+    .social-links {
+      margin-top: auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .link-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 12px 18px;
+      margin: 8px;
+      border-radius: 88px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .link-button i {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    .link-button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Style for audio controls (optional) */
+    audio {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+<!-- SVG filter for ripple effect -->
+<svg style="display: none;">
+  <filter id="ripple">
+    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="turbulence"/>
+    <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<div class="bio-container">
+  <h1></h1>
+  <h1></h1>
+  <h1></h1>
+</div>
+
+<!-- Bottom centered links -->
+<div class="social-links">
+  <a href="https://www.snapchat.com/add/barzan.gold" class="link-button" target="_blank">
+    <i class="fab fa-snapchat-ghost"></i> Snapchat
+  </a>
+  <a href="https://www.tiktok.com/@zeringri.barzan" class="link-button" target="_blank">
+    <i class="fab fa-tiktok"></i> TikTok
+  </a>
+  <a href="https://www.instagram.com/zerngri_barzan" class="link-button" target="_blank">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
+  <a href="https://wa.me/+9647504475644" class="link-button" target="_blank">
+    <i class="fab fa-whatsapp"></i> Whatsapp
+  </a>
+</div>
+
+<!-- Background Music -->
+<audio src="https://files.catbox.moe/cslrxr.mp3" autoplay loop hidden></audio>
+
+</body>
+</html>
