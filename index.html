@@ -140,9 +140,47 @@
     <i class="fab fa-whatsapp"></i> Whatsapp
   </a>
 </div>
-
 <!-- Background Music -->
-<audio src="https://files.catbox.moe/cslrxr.mp3" autoplay loop hidden></audio>
+<audio id="bg-music" loop>
+  <source src="https://files.catbox.moe/cslrxr.mp3" type="audio/mpeg" />
+  mhammadhassann copy right
+</audio>
 
-</body>
-</html>
+<!-- Tap to play prompt for mobile -->
+<div id="tap-to-play" style="
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  z-index: 9999;
+  text-align: center;
+  cursor: pointer;
+">
+  🎵 
+</div>
+
+<script>
+  const music = document.getElementById("bg-music");
+  const tapPrompt = document.getElementById("tap-to-play");
+
+  function startMusic() {
+    music.play().then(() => {
+      tapPrompt.style.display = "none";
+    }).catch((e) => {
+      console.log("Autoplay blocked:", e);
+    });
+  }
+
+  // Listen for first user interaction
+  window.addEventListener("click", startMusic, { once: true });
+  window.addEventListener("touchstart", startMusic, { once: true });
+</script>
+
+
+
+
